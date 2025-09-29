@@ -18,7 +18,7 @@ jobs:
         run: mkdir -p trivy-output
 
       - name: Run Trivy (fs) via Trivy Action — JSON
-        uses: aquasecurity/trivy-action@v0.33.1
+        uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'fs'
           scan-ref: '.'
@@ -28,7 +28,7 @@ jobs:
           exit-code: '0'
 
       - name: Run Trivy (fs) via Trivy Action — SARIF
-        uses: aquasecurity/trivy-action@v0.33.1
+        uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'fs'
           scan-ref: '.'
