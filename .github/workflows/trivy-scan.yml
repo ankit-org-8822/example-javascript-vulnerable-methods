@@ -1,0 +1,49 @@
+name: Trivy scan
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  trivy:
+    name: Run Trivy filesystem scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create output directory
+        run: mkdir -p trivy-output
+
+      - name: Run Trivy (fs) via Trivy Action — JSON
+        uses: aquasecurity/trivy-action@v0.33.1
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          format: 'json'
+          output: 'trivy-output/trivy-results.json'
+          # Do not fail the job on vulnerabilities; we want to always upload artifacts
+          exit-code: '0'
+
+      - name: Run Trivy (fs) via Trivy Action — SARIF
+        uses: aquasecurity/trivy-action@v0.33.1
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          format: 'sarif'
+          output: 'trivy-output/trivy-results.sarif'
+          exit-code: '0'
+
+      - name: Upload JSON artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy-results-json
+          path: trivy-output/trivy-results.json
+
+      - name: Upload SARIF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy-results-sarif
+          path: trivy-output/trivy-results.sarif
