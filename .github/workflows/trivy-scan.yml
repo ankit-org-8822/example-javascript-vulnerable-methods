@@ -94,6 +94,14 @@ jobs:
           sarif_file: trivy-${{ steps.sanitize.outputs.sanitized_path }}.sarif
           category: trivy-fs-${{ matrix.path }}
 
+      - name: Upload Trivy FS SARIF as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy-fs-${{ steps.sanitize.outputs.sanitized_path }}
+          path: trivy-${{ steps.sanitize.outputs.sanitized_path }}.sarif
+          retention-days: 30
+
   image_scan:
     name: Image – ${{ matrix.dir }}
     needs: discover
@@ -136,3 +144,11 @@ jobs:
         with:
           sarif_file: trivy-image-${{ steps.sanitize-dir.outputs.sanitized_dir }}.sarif
           category: trivy-image-${{ matrix.dir }}
+
+      - name: Upload Trivy Image SARIF as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy-image-${{ steps.sanitize-dir.outputs.sanitized_dir }}
+          path: trivy-image-${{ steps.sanitize-dir.outputs.sanitized_dir }}.sarif
+          retention-days: 30
