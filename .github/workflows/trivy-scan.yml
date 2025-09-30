@@ -75,7 +75,7 @@ jobs:
           echo "sanitized_path=$SANITIZED_PATH" >> $GITHUB_OUTPUT
 
       - name: Trivy (fs + secrets + misconfig) → SARIF
-        uses: aquasecurity/trivy-action@v0.33.1   # replace with a pinned tag when you pick one
+        uses: aquasecurity/trivy-action@0.33.1   # replace with a pinned tag when you pick one
         with:
           scan-type: fs
           scan-ref: ${{ matrix.path }}
@@ -121,7 +121,7 @@ jobs:
           echo "sanitized_dir=$SANITIZED_DIR" >> $GITHUB_OUTPUT
 
       - name: Trivy (image) → SARIF
-        uses: aquasecurity/trivy-action@v0.33.1   # replace with a pinned tag when you pick one
+        uses: aquasecurity/trivy-action@0.33.1   # replace with a pinned tag when you pick one
         with:
           image-ref: ${{ steps.build-image.outputs.image }}
           format: sarif
