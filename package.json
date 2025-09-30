@@ -21,7 +21,10 @@
     "to": "0.2.9",
     "url": "0.11.0",
     "lodash": "4.17.15",
-    "marked": "0.3.19"
+    "marked": "0.3.19",
+    "express": "4.17.1",
+    "mysql": "2.18.1",
+    "node-serialize": "0.0.4"
   },
   "devDependencies": {
     "mocha": "^7.0.1"

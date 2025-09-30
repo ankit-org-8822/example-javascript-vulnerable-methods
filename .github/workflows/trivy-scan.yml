@@ -1,72 +1,124 @@
-name: Trivy scan
+name: Trivy Monorepo Security
 
 on:
   push:
     branches: ["**"]
   pull_request:
-    branches: ["**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+  security-events: write
+
+concurrency:
+  group: trivy-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  trivy:
-    name: Run Trivy filesystem scan
+  discover:
+    name: Discover components
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      security-events: write
+    outputs:
+      paths_json: ${{ steps.discover.outputs.paths_json }}
+      docker_json: ${{ steps.discover.outputs.docker_json }}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Create output directory
-        run: mkdir -p trivy-output
+      - id: discover
+        name: Build matrices (apps/*, services/*)
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Directories you consider "components" in your monorepo:
+          ROOTS=("apps" "services" "packages")
 
-      - name: Run Trivy (fs) via Trivy Action — JSON
-        uses: aquasecurity/trivy-action@master
+          PATHS=()
+          DOCKER=()
+
+          for ROOT in "${ROOTS[@]}"; do
+            if [[ -d "$ROOT" ]]; then
+              while IFS= read -r -d '' d; do
+                PATHS+=("$d")
+                if [[ -f "$d/Dockerfile" ]]; then
+                  DOCKER+=("$d")
+                fi
+              done < <(find "$ROOT" -mindepth 1 -maxdepth 1 -type d -print0)
+            fi
+          done
+
+          # Always include repo root for top-level configs / IaC
+          PATHS+=(".")
+
+          jq -nc --argjson a "$(printf '%s\n' "${PATHS[@]}" | jq -R . | jq -s .)" \
+                 --argjson b "$(printf '%s\n' "${DOCKER[@]}" | jq -R . | jq -s .)" \
+                 '{paths:$a, docker:$b}' > matrices.json
+
+          echo "paths_json=$(jq -c '.paths' matrices.json)" >> $GITHUB_OUTPUT
+          echo "docker_json=$(jq -c '.docker' matrices.json)" >> $GITHUB_OUTPUT
+
+  fs_secret_misconfig:
+    name: FS/Secrets/Misconfig – ${{ matrix.path }}
+    needs: discover
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        path: ${{ fromJson(needs.discover.outputs.paths_json) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Trivy (fs + secrets + misconfig) → SARIF
+        uses: aquasecurity/trivy-action@v0.33.1   # replace with a pinned tag when you pick one
         with:
-          scan-type: 'fs'
-          scan-ref: '.'
-          format: 'json'
-          output: 'trivy-output/trivy-results.json'
-          # Do not fail the job on vulnerabilities; we want to always upload artifacts
-          exit-code: '0'
+          scan-type: fs
+          scan-ref: ${{ matrix.path }}
+          scanners: vuln,secret,misconfig
+          format: sarif
+          output: trivy-${{ matrix.path//\//- }}.sarif
+          ignore-unfixed: true
+          severity: CRITICAL,HIGH
+          # Skip noisy dirs (adjust as needed)
+          skip-dirs: .git,node_modules,dist,build,.next
 
-      - name: Run Trivy (fs) via Trivy Action — SARIF
-        uses: aquasecurity/trivy-action@master
+      - name: Upload SARIF (fs)
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
         with:
-          scan-type: 'fs'
-          scan-ref: '.'
-          format: 'sarif'
-          output: 'trivy-output/trivy-results.sarif'
-          exit-code: '0'
+          sarif_file: trivy-${{ matrix.path//\//- }}.sarif
+          category: trivy-fs-${{ matrix.path }}
 
-      - name: Upload JSON artifact
-        uses: actions/upload-artifact@v4
+  image_scan:
+    name: Image – ${{ matrix.dir }}
+    needs: discover
+    if: ${{ fromJson(needs.discover.outputs.docker_json)[0] != null }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        dir: ${{ fromJson(needs.discover.outputs.docker_json) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build image
+        run: |
+          IMAGE=monorepo/${{ matrix.dir##*/ }}:${{ github.sha }}
+          docker build -t "$IMAGE" "${{ matrix.dir }}"
+          echo "IMAGE=$IMAGE" >> $GITHUB_ENV
+
+      - name: Trivy (image) → SARIF
+        uses: aquasecurity/trivy-action@v0.33.1   # replace with a pinned tag when you pick one
         with:
-          name: trivy-results-json
-          path: trivy-output/trivy-results.json
+          image-ref: ${{ env.IMAGE }}
+          format: sarif
+          output: trivy-image-${{ matrix.dir//\//- }}.sarif
+          vuln-type: os,library
+          ignore-unfixed: true
+          severity: CRITICAL,HIGH
 
-      - name: Upload SARIF artifact
-        uses: actions/upload-artifact@v4
+      - name: Upload SARIF (image)
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
         with:
-          name: trivy-results-sarif
-          path: trivy-output/trivy-results.sarif
-
-      # === CodeQL analysis ===
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
-        with:
-          languages: javascript
-
-      - name: Run CodeQL autobuild
-        uses: github/codeql-action/autobuild@v3
-
-      - name: Analyze with CodeQL
-        uses: github/codeql-action/analyze@v3
-        with:
-          output: codeql-output
-
-      - name: Upload CodeQL SARIF artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: codeql-results-sarif
-          path: codeql-output
+          sarif_file: trivy-image-${{ matrix.dir//\//- }}.sarif
+          category: trivy-image-${{ matrix.dir }}
