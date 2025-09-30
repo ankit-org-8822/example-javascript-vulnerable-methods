@@ -1,0 +1,2106 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/main/sarif-2.1/schema/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "fullName": "Trivy Vulnerability Scanner",
+          "informationUri": "https://github.com/aquasecurity/trivy",
+          "name": "Trivy",
+          "rules": [
+            {
+              "id": "GHSA-cgjv-rghq-qhgp",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "Path Traversal in algo-httpserv"
+              },
+              "fullDescription": {
+                "text": "Versions of `algo-httpserv` prior to 1.1.2 are vulnerable to Path Traversal.  Due to insufficient input sanitization, attackers can access server files by using relative paths. \n\n\n## Recommendation\n\nUpgrade to version 1.1.2 or later."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://github.com/advisories/GHSA-cgjv-rghq-qhgp",
+              "help": {
+                "text": "Vulnerability GHSA-cgjv-rghq-qhgp\nSeverity: HIGH\nPackage: algo-httpserv\nFixed Version: 1.1.2\nLink: [GHSA-cgjv-rghq-qhgp](https://github.com/advisories/GHSA-cgjv-rghq-qhgp)\nVersions of `algo-httpserv` prior to 1.1.2 are vulnerable to Path Traversal.  Due to insufficient input sanitization, attackers can access server files by using relative paths. \n\n\n## Recommendation\n\nUpgrade to version 1.1.2 or later.",
+                "markdown": "**Vulnerability GHSA-cgjv-rghq-qhgp**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|algo-httpserv|1.1.2|[GHSA-cgjv-rghq-qhgp](https://github.com/advisories/GHSA-cgjv-rghq-qhgp)|\n\nVersions of `algo-httpserv` prior to 1.1.2 are vulnerable to Path Traversal.  Due to insufficient input sanitization, attackers can access server files by using relative paths. \n\n\n## Recommendation\n\nUpgrade to version 1.1.2 or later."
+              },
+              "properties": {
+                "cvssv3_baseScore": 8.6,
+                "cvssv3_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L",
+                "precision": "very-high",
+                "security-severity": "8.6",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2021-43138",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "async: Prototype Pollution in async"
+              },
+              "fullDescription": {
+                "text": "In Async before 2.6.4 and 3.x before 3.2.2, a malicious user can obtain privileges via the mapValues() method, aka lib/internal/iterator.js createObjectIterator prototype pollution."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2021-43138",
+              "help": {
+                "text": "Vulnerability CVE-2021-43138\nSeverity: HIGH\nPackage: async\nFixed Version: 3.2.2, 2.6.4\nLink: [CVE-2021-43138](https://avd.aquasec.com/nvd/cve-2021-43138)\nIn Async before 2.6.4 and 3.x before 3.2.2, a malicious user can obtain privileges via the mapValues() method, aka lib/internal/iterator.js createObjectIterator prototype pollution.",
+                "markdown": "**Vulnerability CVE-2021-43138**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|async|3.2.2, 2.6.4|[CVE-2021-43138](https://avd.aquasec.com/nvd/cve-2021-43138)|\n\nIn Async before 2.6.4 and 3.x before 3.2.2, a malicious user can obtain privileges via the mapValues() method, aka lib/internal/iterator.js createObjectIterator prototype pollution."
+              },
+              "properties": {
+                "cvssv3_baseScore": 7.8,
+                "cvssv3_vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+                "precision": "very-high",
+                "security-severity": "7.8",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-24434",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "dicer: nodejs service crash by sending a crafted payload"
+              },
+              "fullDescription": {
+                "text": "This affects all versions of package dicer. A malicious attacker can send a modified form to server, and crash the nodejs service. An attacker could sent the payload again and again so that the service continuously crashes."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-24434",
+              "help": {
+                "text": "Vulnerability CVE-2022-24434\nSeverity: HIGH\nPackage: dicer\nFixed Version: \nLink: [CVE-2022-24434](https://avd.aquasec.com/nvd/cve-2022-24434)\nThis affects all versions of package dicer. A malicious attacker can send a modified form to server, and crash the nodejs service. An attacker could sent the payload again and again so that the service continuously crashes.",
+                "markdown": "**Vulnerability CVE-2022-24434**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|dicer||[CVE-2022-24434](https://avd.aquasec.com/nvd/cve-2022-24434)|\n\nThis affects all versions of package dicer. A malicious attacker can send a modified form to server, and crash the nodejs service. An attacker could sent the payload again and again so that the service continuously crashes."
+              },
+              "properties": {
+                "cvssv3_baseScore": 7.5,
+                "cvssv3_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+                "precision": "very-high",
+                "security-severity": "7.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "GHSA-8j8c-7jfh-h6hx",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "Code Injection in js-yaml"
+              },
+              "fullDescription": {
+                "text": "Versions of `js-yaml` prior to 3.13.1 are vulnerable to Code Injection. The `load()` function may execute arbitrary code injected through a malicious YAML file. Objects that have `toString` as key, JavaScript code as value and are used as explicit mapping keys allow attackers to execute the supplied code through the `load()` function. The `safeLoad()` function is unaffected.\n\nAn example payload is \n`{ toString: !\u003ctag:yaml.org,2002:js/function\u003e 'function (){return Date.now()}' } : 1` \nwhich returns the object \n{\n  \"1553107949161\": 1\n}\n\n\n## Recommendation\n\nUpgrade to version 3.13.1."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://github.com/advisories/GHSA-8j8c-7jfh-h6hx",
+              "help": {
+                "text": "Vulnerability GHSA-8j8c-7jfh-h6hx\nSeverity: HIGH\nPackage: js-yaml\nFixed Version: 3.13.1\nLink: [GHSA-8j8c-7jfh-h6hx](https://github.com/advisories/GHSA-8j8c-7jfh-h6hx)\nVersions of `js-yaml` prior to 3.13.1 are vulnerable to Code Injection. The `load()` function may execute arbitrary code injected through a malicious YAML file. Objects that have `toString` as key, JavaScript code as value and are used as explicit mapping keys allow attackers to execute the supplied code through the `load()` function. The `safeLoad()` function is unaffected.\n\nAn example payload is \n`{ toString: !\u003ctag:yaml.org,2002:js/function\u003e 'function (){return Date.now()}' } : 1` \nwhich returns the object \n{\n  \"1553107949161\": 1\n}\n\n\n## Recommendation\n\nUpgrade to version 3.13.1.",
+                "markdown": "**Vulnerability GHSA-8j8c-7jfh-h6hx**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|js-yaml|3.13.1|[GHSA-8j8c-7jfh-h6hx](https://github.com/advisories/GHSA-8j8c-7jfh-h6hx)|\n\nVersions of `js-yaml` prior to 3.13.1 are vulnerable to Code Injection. The `load()` function may execute arbitrary code injected through a malicious YAML file. Objects that have `toString` as key, JavaScript code as value and are used as explicit mapping keys allow attackers to execute the supplied code through the `load()` function. The `safeLoad()` function is unaffected.\n\nAn example payload is \n`{ toString: !\u003ctag:yaml.org,2002:js/function\u003e 'function (){return Date.now()}' } : 1` \nwhich returns the object \n{\n  \"1553107949161\": 1\n}\n\n\n## Recommendation\n\nUpgrade to version 3.13.1."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "8.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2020-8203",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "nodejs-lodash: prototype pollution in zipObjectDeep function"
+              },
+              "fullDescription": {
+                "text": "Prototype pollution attack when using _.zipObjectDeep in lodash before 4.17.20."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2020-8203",
+              "help": {
+                "text": "Vulnerability CVE-2020-8203\nSeverity: HIGH\nPackage: lodash\nFixed Version: 4.17.19\nLink: [CVE-2020-8203](https://avd.aquasec.com/nvd/cve-2020-8203)\nPrototype pollution attack when using _.zipObjectDeep in lodash before 4.17.20.",
+                "markdown": "**Vulnerability CVE-2020-8203**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|lodash|4.17.19|[CVE-2020-8203](https://avd.aquasec.com/nvd/cve-2020-8203)|\n\nPrototype pollution attack when using _.zipObjectDeep in lodash before 4.17.20."
+              },
+              "properties": {
+                "cvssv3_baseScore": 7.4,
+                "cvssv3_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:H/A:H",
+                "precision": "very-high",
+                "security-severity": "7.4",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2021-23337",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "nodejs-lodash: command injection via template"
+              },
+              "fullDescription": {
+                "text": "Lodash versions prior to 4.17.21 are vulnerable to Command Injection via the template function."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2021-23337",
+              "help": {
+                "text": "Vulnerability CVE-2021-23337\nSeverity: HIGH\nPackage: lodash\nFixed Version: 4.17.21\nLink: [CVE-2021-23337](https://avd.aquasec.com/nvd/cve-2021-23337)\nLodash versions prior to 4.17.21 are vulnerable to Command Injection via the template function.",
+                "markdown": "**Vulnerability CVE-2021-23337**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|lodash|4.17.21|[CVE-2021-23337](https://avd.aquasec.com/nvd/cve-2021-23337)|\n\nLodash versions prior to 4.17.21 are vulnerable to Command Injection via the template function."
+              },
+              "properties": {
+                "cvssv3_baseScore": 7.2,
+                "cvssv3_vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+                "precision": "very-high",
+                "security-severity": "7.2",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "NSWG-ECO-516",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "Allocation of Resources Without Limits or Throttling"
+              },
+              "fullDescription": {
+                "text": "Prototype pollution attack (lodash)"
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://www.npmjs.com/advisories/1523",
+              "help": {
+                "text": "Vulnerability NSWG-ECO-516\nSeverity: HIGH\nPackage: lodash\nFixed Version: \u003e=4.17.19\nLink: [NSWG-ECO-516](https://www.npmjs.com/advisories/1523)\nPrototype pollution attack (lodash)",
+                "markdown": "**Vulnerability NSWG-ECO-516**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|lodash|\u003e=4.17.19|[NSWG-ECO-516](https://www.npmjs.com/advisories/1523)|\n\nPrototype pollution attack (lodash)"
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "8.0",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2020-28500",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "nodejs-lodash: ReDoS via the toNumber, trim and trimEnd functions"
+              },
+              "fullDescription": {
+                "text": "Lodash versions prior to 4.17.21 are vulnerable to Regular Expression Denial of Service (ReDoS) via the toNumber, trim and trimEnd functions."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2020-28500",
+              "help": {
+                "text": "Vulnerability CVE-2020-28500\nSeverity: MEDIUM\nPackage: lodash\nFixed Version: 4.17.21\nLink: [CVE-2020-28500](https://avd.aquasec.com/nvd/cve-2020-28500)\nLodash versions prior to 4.17.21 are vulnerable to Regular Expression Denial of Service (ReDoS) via the toNumber, trim and trimEnd functions.",
+                "markdown": "**Vulnerability CVE-2020-28500**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|lodash|4.17.21|[CVE-2020-28500](https://avd.aquasec.com/nvd/cve-2020-28500)|\n\nLodash versions prior to 4.17.21 are vulnerable to Regular Expression Denial of Service (ReDoS) via the toNumber, trim and trimEnd functions."
+              },
+              "properties": {
+                "cvssv3_baseScore": 5.3,
+                "cvssv3_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+                "precision": "very-high",
+                "security-severity": "5.3",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-21680",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "marked: regular expression block.def may lead Denial of Service"
+              },
+              "fullDescription": {
+                "text": "Marked is a markdown parser and compiler. Prior to version 4.0.10, the regular expression `block.def` may cause catastrophic backtracking against some strings and lead to a regular expression denial of service (ReDoS). Anyone who runs untrusted markdown through a vulnerable version of marked and does not use a worker with a time limit may be affected. This issue is patched in version 4.0.10. As a workaround, avoid running untrusted markdown through marked or run marked on a worker thread and set a reasonable time limit to prevent draining resources."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-21680",
+              "help": {
+                "text": "Vulnerability CVE-2022-21680\nSeverity: HIGH\nPackage: marked\nFixed Version: 4.0.10\nLink: [CVE-2022-21680](https://avd.aquasec.com/nvd/cve-2022-21680)\nMarked is a markdown parser and compiler. Prior to version 4.0.10, the regular expression `block.def` may cause catastrophic backtracking against some strings and lead to a regular expression denial of service (ReDoS). Anyone who runs untrusted markdown through a vulnerable version of marked and does not use a worker with a time limit may be affected. This issue is patched in version 4.0.10. As a workaround, avoid running untrusted markdown through marked or run marked on a worker thread and set a reasonable time limit to prevent draining resources.",
+                "markdown": "**Vulnerability CVE-2022-21680**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|marked|4.0.10|[CVE-2022-21680](https://avd.aquasec.com/nvd/cve-2022-21680)|\n\nMarked is a markdown parser and compiler. Prior to version 4.0.10, the regular expression `block.def` may cause catastrophic backtracking against some strings and lead to a regular expression denial of service (ReDoS). Anyone who runs untrusted markdown through a vulnerable version of marked and does not use a worker with a time limit may be affected. This issue is patched in version 4.0.10. As a workaround, avoid running untrusted markdown through marked or run marked on a worker thread and set a reasonable time limit to prevent draining resources."
+              },
+              "properties": {
+                "cvssv3_baseScore": 7.5,
+                "cvssv3_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+                "precision": "very-high",
+                "security-severity": "7.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-21681",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "marked: regular expression inline.reflinkSearch may lead Denial of Service"
+              },
+              "fullDescription": {
+                "text": "Marked is a markdown parser and compiler. Prior to version 4.0.10, the regular expression `inline.reflinkSearch` may cause catastrophic backtracking against some strings and lead to a denial of service (DoS). Anyone who runs untrusted markdown through a vulnerable version of marked and does not use a worker with a time limit may be affected. This issue is patched in version 4.0.10. As a workaround, avoid running untrusted markdown through marked or run marked on a worker thread and set a reasonable time limit to prevent draining resources."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-21681",
+              "help": {
+                "text": "Vulnerability CVE-2022-21681\nSeverity: HIGH\nPackage: marked\nFixed Version: 4.0.10\nLink: [CVE-2022-21681](https://avd.aquasec.com/nvd/cve-2022-21681)\nMarked is a markdown parser and compiler. Prior to version 4.0.10, the regular expression `inline.reflinkSearch` may cause catastrophic backtracking against some strings and lead to a denial of service (DoS). Anyone who runs untrusted markdown through a vulnerable version of marked and does not use a worker with a time limit may be affected. This issue is patched in version 4.0.10. As a workaround, avoid running untrusted markdown through marked or run marked on a worker thread and set a reasonable time limit to prevent draining resources.",
+                "markdown": "**Vulnerability CVE-2022-21681**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|marked|4.0.10|[CVE-2022-21681](https://avd.aquasec.com/nvd/cve-2022-21681)|\n\nMarked is a markdown parser and compiler. Prior to version 4.0.10, the regular expression `inline.reflinkSearch` may cause catastrophic backtracking against some strings and lead to a denial of service (DoS). Anyone who runs untrusted markdown through a vulnerable version of marked and does not use a worker with a time limit may be affected. This issue is patched in version 4.0.10. As a workaround, avoid running untrusted markdown through marked or run marked on a worker thread and set a reasonable time limit to prevent draining resources."
+              },
+              "properties": {
+                "cvssv3_baseScore": 7.5,
+                "cvssv3_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+                "precision": "very-high",
+                "security-severity": "7.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "GHSA-xf5p-87ch-gxw2",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "Marked ReDoS due to email addresses being evaluated in quadratic time"
+              },
+              "fullDescription": {
+                "text": "Versions of `marked` from 0.3.14 until 0.6.2 are vulnerable to Regular Expression Denial of Service. Email addresses may be evaluated in quadratic time, allowing attackers to potentially crash the node process due to resource exhaustion.\n\n\n## Recommendation\n\nUpgrade to version 0.6.2 or later."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://github.com/advisories/GHSA-xf5p-87ch-gxw2",
+              "help": {
+                "text": "Vulnerability GHSA-xf5p-87ch-gxw2\nSeverity: MEDIUM\nPackage: marked\nFixed Version: 0.6.2\nLink: [GHSA-xf5p-87ch-gxw2](https://github.com/advisories/GHSA-xf5p-87ch-gxw2)\nVersions of `marked` from 0.3.14 until 0.6.2 are vulnerable to Regular Expression Denial of Service. Email addresses may be evaluated in quadratic time, allowing attackers to potentially crash the node process due to resource exhaustion.\n\n\n## Recommendation\n\nUpgrade to version 0.6.2 or later.",
+                "markdown": "**Vulnerability GHSA-xf5p-87ch-gxw2**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|marked|0.6.2|[GHSA-xf5p-87ch-gxw2](https://github.com/advisories/GHSA-xf5p-87ch-gxw2)|\n\nVersions of `marked` from 0.3.14 until 0.6.2 are vulnerable to Regular Expression Denial of Service. Email addresses may be evaluated in quadratic time, allowing attackers to potentially crash the node process due to resource exhaustion.\n\n\n## Recommendation\n\nUpgrade to version 0.6.2 or later."
+              },
+              "properties": {
+                "cvssv3_baseScore": 5.3,
+                "cvssv3_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+                "precision": "very-high",
+                "security-severity": "5.3",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2021-44906",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "minimist: prototype pollution"
+              },
+              "fullDescription": {
+                "text": "Minimist \u003c=1.2.5 is vulnerable to Prototype Pollution via file index.js, function setKey() (lines 69-95)."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2021-44906",
+              "help": {
+                "text": "Vulnerability CVE-2021-44906\nSeverity: CRITICAL\nPackage: minimist\nFixed Version: 1.2.6, 0.2.4\nLink: [CVE-2021-44906](https://avd.aquasec.com/nvd/cve-2021-44906)\nMinimist \u003c=1.2.5 is vulnerable to Prototype Pollution via file index.js, function setKey() (lines 69-95).",
+                "markdown": "**Vulnerability CVE-2021-44906**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|CRITICAL|minimist|1.2.6, 0.2.4|[CVE-2021-44906](https://avd.aquasec.com/nvd/cve-2021-44906)|\n\nMinimist \u003c=1.2.5 is vulnerable to Prototype Pollution via file index.js, function setKey() (lines 69-95)."
+              },
+              "properties": {
+                "cvssv3_baseScore": 9.8,
+                "cvssv3_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                "precision": "very-high",
+                "security-severity": "9.8",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "CRITICAL"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2020-7598",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "nodejs-minimist: prototype pollution allows adding or modifying properties of Object.prototype using a constructor or __proto__ payload"
+              },
+              "fullDescription": {
+                "text": "minimist before 1.2.2 could be tricked into adding or modifying properties of Object.prototype using a \"constructor\" or \"__proto__\" payload."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2020-7598",
+              "help": {
+                "text": "Vulnerability CVE-2020-7598\nSeverity: MEDIUM\nPackage: minimist\nFixed Version: 0.2.1, 1.2.3\nLink: [CVE-2020-7598](https://avd.aquasec.com/nvd/cve-2020-7598)\nminimist before 1.2.2 could be tricked into adding or modifying properties of Object.prototype using a \"constructor\" or \"__proto__\" payload.",
+                "markdown": "**Vulnerability CVE-2020-7598**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|MEDIUM|minimist|0.2.1, 1.2.3|[CVE-2020-7598](https://avd.aquasec.com/nvd/cve-2020-7598)|\n\nminimist before 1.2.2 could be tricked into adding or modifying properties of Object.prototype using a \"constructor\" or \"__proto__\" payload."
+              },
+              "properties": {
+                "cvssv3_baseScore": 5.6,
+                "cvssv3_vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L",
+                "precision": "very-high",
+                "security-severity": "5.6",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-24999",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "express: \"qs\" prototype poisoning causes the hang of the node process"
+              },
+              "fullDescription": {
+                "text": "qs before 6.10.3, as used in Express before 4.17.3 and other products, allows attackers to cause a Node process hang for an Express application because an __ proto__ key can be used. In many typical Express use cases, an unauthenticated remote attacker can place the attack payload in the query string of the URL that is used to visit the application, such as a[__proto__]=b\u0026a[__proto__]\u0026a[length]=100000000. The fix was backported to qs 6.9.7, 6.8.3, 6.7.3, 6.6.1, 6.5.3, 6.4.1, 6.3.3, and 6.2.4 (and therefore Express 4.17.3, which has \"deps: qs@6.9.7\" in its release description, is not vulnerable)."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-24999",
+              "help": {
+                "text": "Vulnerability CVE-2022-24999\nSeverity: HIGH\nPackage: qs\nFixed Version: 6.10.3, 6.9.7, 6.8.3, 6.7.3, 6.6.1, 6.5.3, 6.4.1, 6.3.3, 6.2.4\nLink: [CVE-2022-24999](https://avd.aquasec.com/nvd/cve-2022-24999)\nqs before 6.10.3, as used in Express before 4.17.3 and other products, allows attackers to cause a Node process hang for an Express application because an __ proto__ key can be used. In many typical Express use cases, an unauthenticated remote attacker can place the attack payload in the query string of the URL that is used to visit the application, such as a[__proto__]=b\u0026a[__proto__]\u0026a[length]=100000000. The fix was backported to qs 6.9.7, 6.8.3, 6.7.3, 6.6.1, 6.5.3, 6.4.1, 6.3.3, and 6.2.4 (and therefore Express 4.17.3, which has \"deps: qs@6.9.7\" in its release description, is not vulnerable).",
+                "markdown": "**Vulnerability CVE-2022-24999**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|qs|6.10.3, 6.9.7, 6.8.3, 6.7.3, 6.6.1, 6.5.3, 6.4.1, 6.3.3, 6.2.4|[CVE-2022-24999](https://avd.aquasec.com/nvd/cve-2022-24999)|\n\nqs before 6.10.3, as used in Express before 4.17.3 and other products, allows attackers to cause a Node process hang for an Express application because an __ proto__ key can be used. In many typical Express use cases, an unauthenticated remote attacker can place the attack payload in the query string of the URL that is used to visit the application, such as a[__proto__]=b\u0026a[__proto__]\u0026a[length]=100000000. The fix was backported to qs 6.9.7, 6.8.3, 6.7.3, 6.6.1, 6.5.3, 6.4.1, 6.3.3, and 6.2.4 (and therefore Express 4.17.3, which has \"deps: qs@6.9.7\" in its release description, is not vulnerable)."
+              },
+              "properties": {
+                "cvssv3_baseScore": 7.5,
+                "cvssv3_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+                "precision": "very-high",
+                "security-severity": "7.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2022-25883",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "nodejs-semver: Regular expression denial of service"
+              },
+              "fullDescription": {
+                "text": "Versions of the package semver before 7.5.2 are vulnerable to Regular Expression Denial of Service (ReDoS) via the function new Range, when untrusted user data is provided as a range.\r\r\r"
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2022-25883",
+              "help": {
+                "text": "Vulnerability CVE-2022-25883\nSeverity: HIGH\nPackage: semver\nFixed Version: 7.5.2, 6.3.1, 5.7.2\nLink: [CVE-2022-25883](https://avd.aquasec.com/nvd/cve-2022-25883)\nVersions of the package semver before 7.5.2 are vulnerable to Regular Expression Denial of Service (ReDoS) via the function new Range, when untrusted user data is provided as a range.\r\r\r",
+                "markdown": "**Vulnerability CVE-2022-25883**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|HIGH|semver|7.5.2, 6.3.1, 5.7.2|[CVE-2022-25883](https://avd.aquasec.com/nvd/cve-2022-25883)|\n\nVersions of the package semver before 7.5.2 are vulnerable to Regular Expression Denial of Service (ReDoS) via the function new Range, when untrusted user data is provided as a range.\r\r\r"
+              },
+              "properties": {
+                "cvssv3_baseScore": 7.5,
+                "cvssv3_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+                "precision": "very-high",
+                "security-severity": "7.5",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "CVE-2021-23358",
+              "name": "LanguageSpecificPackageVulnerability",
+              "shortDescription": {
+                "text": "nodejs-underscore: Arbitrary code execution via the template function"
+              },
+              "fullDescription": {
+                "text": "The package underscore from 1.13.0-0 and before 1.13.0-2, from 1.3.2 and before 1.12.1 are vulnerable to Arbitrary Code Injection via the template function, particularly when a variable property is passed as an argument as it is not sanitized."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/nvd/cve-2021-23358",
+              "help": {
+                "text": "Vulnerability CVE-2021-23358\nSeverity: CRITICAL\nPackage: underscore\nFixed Version: 1.12.1\nLink: [CVE-2021-23358](https://avd.aquasec.com/nvd/cve-2021-23358)\nThe package underscore from 1.13.0-0 and before 1.13.0-2, from 1.3.2 and before 1.12.1 are vulnerable to Arbitrary Code Injection via the template function, particularly when a variable property is passed as an argument as it is not sanitized.",
+                "markdown": "**Vulnerability CVE-2021-23358**\n| Severity | Package | Fixed Version | Link |\n| --- | --- | --- | --- |\n|CRITICAL|underscore|1.12.1|[CVE-2021-23358](https://avd.aquasec.com/nvd/cve-2021-23358)|\n\nThe package underscore from 1.13.0-0 and before 1.13.0-2, from 1.3.2 and before 1.12.1 are vulnerable to Arbitrary Code Injection via the template function, particularly when a variable property is passed as an argument as it is not sanitized."
+              },
+              "properties": {
+                "cvssv3_baseScore": 9.8,
+                "cvssv3_vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+                "precision": "very-high",
+                "security-severity": "9.8",
+                "tags": [
+                  "vulnerability",
+                  "security",
+                  "CRITICAL"
+                ]
+              }
+            },
+            {
+              "id": "DS002",
+              "name": "Misconfiguration",
+              "shortDescription": {
+                "text": "Image user should not be 'root'"
+              },
+              "fullDescription": {
+                "text": "Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/misconfig/ds002",
+              "help": {
+                "text": "Misconfiguration DS002\nType: Dockerfile Security Check\nSeverity: HIGH\nCheck: Image user should not be 'root'\nMessage: Specify at least 1 USER command in Dockerfile with non-root user as argument\nLink: [DS002](https://avd.aquasec.com/misconfig/ds002)\nRunning containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.",
+                "markdown": "**Misconfiguration DS002**\n| Type | Severity | Check | Message | Link |\n| --- | --- | --- | --- | --- |\n|Dockerfile Security Check|HIGH|Image user should not be 'root'|Specify at least 1 USER command in Dockerfile with non-root user as argument|[DS002](https://avd.aquasec.com/misconfig/ds002)|\n\nRunning containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "8.0",
+                "tags": [
+                  "misconfiguration",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "DS026",
+              "name": "Misconfiguration",
+              "shortDescription": {
+                "text": "No HEALTHCHECK defined"
+              },
+              "fullDescription": {
+                "text": "You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "helpUri": "https://avd.aquasec.com/misconfig/ds026",
+              "help": {
+                "text": "Misconfiguration DS026\nType: Dockerfile Security Check\nSeverity: LOW\nCheck: No HEALTHCHECK defined\nMessage: Add HEALTHCHECK instruction in your Dockerfile\nLink: [DS026](https://avd.aquasec.com/misconfig/ds026)\nYou should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.",
+                "markdown": "**Misconfiguration DS026**\n| Type | Severity | Check | Message | Link |\n| --- | --- | --- | --- | --- |\n|Dockerfile Security Check|LOW|No HEALTHCHECK defined|Add HEALTHCHECK instruction in your Dockerfile|[DS026](https://avd.aquasec.com/misconfig/ds026)|\n\nYou should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "2.0",
+                "tags": [
+                  "misconfiguration",
+                  "security",
+                  "LOW"
+                ]
+              }
+            },
+            {
+              "id": "KSV001",
+              "name": "Misconfiguration",
+              "shortDescription": {
+                "text": "Can elevate its own privileges"
+              },
+              "fullDescription": {
+                "text": "A program inside the container can elevate its own privileges and run as root, which might give the program control over the container and node."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/misconfig/ksv001",
+              "help": {
+                "text": "Misconfiguration KSV001\nType: Kubernetes Security Check\nSeverity: MEDIUM\nCheck: Can elevate its own privileges\nMessage: Container 'insecure-container' of Deployment 'insecure-deployment' should set 'securityContext.allowPrivilegeEscalation' to false\nLink: [KSV001](https://avd.aquasec.com/misconfig/ksv001)\nA program inside the container can elevate its own privileges and run as root, which might give the program control over the container and node.",
+                "markdown": "**Misconfiguration KSV001**\n| Type | Severity | Check | Message | Link |\n| --- | --- | --- | --- | --- |\n|Kubernetes Security Check|MEDIUM|Can elevate its own privileges|Container 'insecure-container' of Deployment 'insecure-deployment' should set 'securityContext.allowPrivilegeEscalation' to false|[KSV001](https://avd.aquasec.com/misconfig/ksv001)|\n\nA program inside the container can elevate its own privileges and run as root, which might give the program control over the container and node."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "misconfiguration",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "KSV003",
+              "name": "Misconfiguration",
+              "shortDescription": {
+                "text": "Default capabilities: some containers do not drop all"
+              },
+              "fullDescription": {
+                "text": "The container should drop all default capabilities and add only those that are needed for its execution."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "helpUri": "https://avd.aquasec.com/misconfig/ksv003",
+              "help": {
+                "text": "Misconfiguration KSV003\nType: Kubernetes Security Check\nSeverity: LOW\nCheck: Default capabilities: some containers do not drop all\nMessage: Container 'insecure-container' of Deployment 'insecure-deployment' should add 'ALL' to 'securityContext.capabilities.drop'\nLink: [KSV003](https://avd.aquasec.com/misconfig/ksv003)\nThe container should drop all default capabilities and add only those that are needed for its execution.",
+                "markdown": "**Misconfiguration KSV003**\n| Type | Severity | Check | Message | Link |\n| --- | --- | --- | --- | --- |\n|Kubernetes Security Check|LOW|Default capabilities: some containers do not drop all|Container 'insecure-container' of Deployment 'insecure-deployment' should add 'ALL' to 'securityContext.capabilities.drop'|[KSV003](https://avd.aquasec.com/misconfig/ksv003)|\n\nThe container should drop all default capabilities and add only those that are needed for its execution."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "2.0",
+                "tags": [
+                  "misconfiguration",
+                  "security",
+                  "LOW"
+                ]
+              }
+            },
+            {
+              "id": "KSV004",
+              "name": "Misconfiguration",
+              "shortDescription": {
+                "text": "Default capabilities: some containers do not drop any"
+              },
+              "fullDescription": {
+                "text": "Security best practices require containers to run with minimal required capabilities."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "helpUri": "https://avd.aquasec.com/misconfig/ksv004",
+              "help": {
+                "text": "Misconfiguration KSV004\nType: Kubernetes Security Check\nSeverity: LOW\nCheck: Default capabilities: some containers do not drop any\nMessage: Container 'insecure-container' of 'deployment' 'insecure-deployment' in 'default' namespace should set securityContext.capabilities.drop\nLink: [KSV004](https://avd.aquasec.com/misconfig/ksv004)\nSecurity best practices require containers to run with minimal required capabilities.",
+                "markdown": "**Misconfiguration KSV004**\n| Type | Severity | Check | Message | Link |\n| --- | --- | --- | --- | --- |\n|Kubernetes Security Check|LOW|Default capabilities: some containers do not drop any|Container 'insecure-container' of 'deployment' 'insecure-deployment' in 'default' namespace should set securityContext.capabilities.drop|[KSV004](https://avd.aquasec.com/misconfig/ksv004)|\n\nSecurity best practices require containers to run with minimal required capabilities."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "2.0",
+                "tags": [
+                  "misconfiguration",
+                  "security",
+                  "LOW"
+                ]
+              }
+            },
+            {
+              "id": "KSV011",
+              "name": "Misconfiguration",
+              "shortDescription": {
+                "text": "CPU not limited"
+              },
+              "fullDescription": {
+                "text": "Enforcing CPU limits prevents DoS via resource exhaustion."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "helpUri": "https://avd.aquasec.com/misconfig/ksv011",
+              "help": {
+                "text": "Misconfiguration KSV011\nType: Kubernetes Security Check\nSeverity: LOW\nCheck: CPU not limited\nMessage: Container 'insecure-container' of Deployment 'insecure-deployment' should set 'resources.limits.cpu'\nLink: [KSV011](https://avd.aquasec.com/misconfig/ksv011)\nEnforcing CPU limits prevents DoS via resource exhaustion.",
+                "markdown": "**Misconfiguration KSV011**\n| Type | Severity | Check | Message | Link |\n| --- | --- | --- | --- | --- |\n|Kubernetes Security Check|LOW|CPU not limited|Container 'insecure-container' of Deployment 'insecure-deployment' should set 'resources.limits.cpu'|[KSV011](https://avd.aquasec.com/misconfig/ksv011)|\n\nEnforcing CPU limits prevents DoS via resource exhaustion."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "2.0",
+                "tags": [
+                  "misconfiguration",
+                  "security",
+                  "LOW"
+                ]
+              }
+            },
+            {
+              "id": "KSV012",
+              "name": "Misconfiguration",
+              "shortDescription": {
+                "text": "Runs as root user"
+              },
+              "fullDescription": {
+                "text": "Force the running image to run as a non-root user to ensure least privileges."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/misconfig/ksv012",
+              "help": {
+                "text": "Misconfiguration KSV012\nType: Kubernetes Security Check\nSeverity: MEDIUM\nCheck: Runs as root user\nMessage: Container 'insecure-container' of Deployment 'insecure-deployment' should set 'securityContext.runAsNonRoot' to true\nLink: [KSV012](https://avd.aquasec.com/misconfig/ksv012)\nForce the running image to run as a non-root user to ensure least privileges.",
+                "markdown": "**Misconfiguration KSV012**\n| Type | Severity | Check | Message | Link |\n| --- | --- | --- | --- | --- |\n|Kubernetes Security Check|MEDIUM|Runs as root user|Container 'insecure-container' of Deployment 'insecure-deployment' should set 'securityContext.runAsNonRoot' to true|[KSV012](https://avd.aquasec.com/misconfig/ksv012)|\n\nForce the running image to run as a non-root user to ensure least privileges."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "misconfiguration",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "KSV014",
+              "name": "Misconfiguration",
+              "shortDescription": {
+                "text": "Root file system is not read-only"
+              },
+              "fullDescription": {
+                "text": "An immutable root file system prevents applications from writing to their local disk. This can limit intrusions, as attackers will not be able to tamper with the file system or write foreign executables to disk."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/misconfig/ksv014",
+              "help": {
+                "text": "Misconfiguration KSV014\nType: Kubernetes Security Check\nSeverity: HIGH\nCheck: Root file system is not read-only\nMessage: Container 'insecure-container' of Deployment 'insecure-deployment' should set 'securityContext.readOnlyRootFilesystem' to true\nLink: [KSV014](https://avd.aquasec.com/misconfig/ksv014)\nAn immutable root file system prevents applications from writing to their local disk. This can limit intrusions, as attackers will not be able to tamper with the file system or write foreign executables to disk.",
+                "markdown": "**Misconfiguration KSV014**\n| Type | Severity | Check | Message | Link |\n| --- | --- | --- | --- | --- |\n|Kubernetes Security Check|HIGH|Root file system is not read-only|Container 'insecure-container' of Deployment 'insecure-deployment' should set 'securityContext.readOnlyRootFilesystem' to true|[KSV014](https://avd.aquasec.com/misconfig/ksv014)|\n\nAn immutable root file system prevents applications from writing to their local disk. This can limit intrusions, as attackers will not be able to tamper with the file system or write foreign executables to disk."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "8.0",
+                "tags": [
+                  "misconfiguration",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "KSV015",
+              "name": "Misconfiguration",
+              "shortDescription": {
+                "text": "CPU requests not specified"
+              },
+              "fullDescription": {
+                "text": "When containers have resource requests specified, the scheduler can make better decisions about which nodes to place pods on, and how to deal with resource contention."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "helpUri": "https://avd.aquasec.com/misconfig/ksv015",
+              "help": {
+                "text": "Misconfiguration KSV015\nType: Kubernetes Security Check\nSeverity: LOW\nCheck: CPU requests not specified\nMessage: Container 'insecure-container' of Deployment 'insecure-deployment' should set 'resources.requests.cpu'\nLink: [KSV015](https://avd.aquasec.com/misconfig/ksv015)\nWhen containers have resource requests specified, the scheduler can make better decisions about which nodes to place pods on, and how to deal with resource contention.",
+                "markdown": "**Misconfiguration KSV015**\n| Type | Severity | Check | Message | Link |\n| --- | --- | --- | --- | --- |\n|Kubernetes Security Check|LOW|CPU requests not specified|Container 'insecure-container' of Deployment 'insecure-deployment' should set 'resources.requests.cpu'|[KSV015](https://avd.aquasec.com/misconfig/ksv015)|\n\nWhen containers have resource requests specified, the scheduler can make better decisions about which nodes to place pods on, and how to deal with resource contention."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "2.0",
+                "tags": [
+                  "misconfiguration",
+                  "security",
+                  "LOW"
+                ]
+              }
+            },
+            {
+              "id": "KSV016",
+              "name": "Misconfiguration",
+              "shortDescription": {
+                "text": "Memory requests not specified"
+              },
+              "fullDescription": {
+                "text": "When containers have memory requests specified, the scheduler can make better decisions about which nodes to place pods on, and how to deal with resource contention."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "helpUri": "https://avd.aquasec.com/misconfig/ksv016",
+              "help": {
+                "text": "Misconfiguration KSV016\nType: Kubernetes Security Check\nSeverity: LOW\nCheck: Memory requests not specified\nMessage: Container 'insecure-container' of Deployment 'insecure-deployment' should set 'resources.requests.memory'\nLink: [KSV016](https://avd.aquasec.com/misconfig/ksv016)\nWhen containers have memory requests specified, the scheduler can make better decisions about which nodes to place pods on, and how to deal with resource contention.",
+                "markdown": "**Misconfiguration KSV016**\n| Type | Severity | Check | Message | Link |\n| --- | --- | --- | --- | --- |\n|Kubernetes Security Check|LOW|Memory requests not specified|Container 'insecure-container' of Deployment 'insecure-deployment' should set 'resources.requests.memory'|[KSV016](https://avd.aquasec.com/misconfig/ksv016)|\n\nWhen containers have memory requests specified, the scheduler can make better decisions about which nodes to place pods on, and how to deal with resource contention."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "2.0",
+                "tags": [
+                  "misconfiguration",
+                  "security",
+                  "LOW"
+                ]
+              }
+            },
+            {
+              "id": "KSV017",
+              "name": "Misconfiguration",
+              "shortDescription": {
+                "text": "Privileged"
+              },
+              "fullDescription": {
+                "text": "Privileged containers share namespaces with the host system and do not offer any security. They should be used exclusively for system containers that require high privileges."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/misconfig/ksv017",
+              "help": {
+                "text": "Misconfiguration KSV017\nType: Kubernetes Security Check\nSeverity: HIGH\nCheck: Privileged\nMessage: Container 'insecure-container' of Deployment 'insecure-deployment' should set 'securityContext.privileged' to false\nLink: [KSV017](https://avd.aquasec.com/misconfig/ksv017)\nPrivileged containers share namespaces with the host system and do not offer any security. They should be used exclusively for system containers that require high privileges.",
+                "markdown": "**Misconfiguration KSV017**\n| Type | Severity | Check | Message | Link |\n| --- | --- | --- | --- | --- |\n|Kubernetes Security Check|HIGH|Privileged|Container 'insecure-container' of Deployment 'insecure-deployment' should set 'securityContext.privileged' to false|[KSV017](https://avd.aquasec.com/misconfig/ksv017)|\n\nPrivileged containers share namespaces with the host system and do not offer any security. They should be used exclusively for system containers that require high privileges."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "8.0",
+                "tags": [
+                  "misconfiguration",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "KSV018",
+              "name": "Misconfiguration",
+              "shortDescription": {
+                "text": "Memory not limited"
+              },
+              "fullDescription": {
+                "text": "Enforcing memory limits prevents DoS via resource exhaustion."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "helpUri": "https://avd.aquasec.com/misconfig/ksv018",
+              "help": {
+                "text": "Misconfiguration KSV018\nType: Kubernetes Security Check\nSeverity: LOW\nCheck: Memory not limited\nMessage: Container 'insecure-container' of Deployment 'insecure-deployment' should set 'resources.limits.memory'\nLink: [KSV018](https://avd.aquasec.com/misconfig/ksv018)\nEnforcing memory limits prevents DoS via resource exhaustion.",
+                "markdown": "**Misconfiguration KSV018**\n| Type | Severity | Check | Message | Link |\n| --- | --- | --- | --- | --- |\n|Kubernetes Security Check|LOW|Memory not limited|Container 'insecure-container' of Deployment 'insecure-deployment' should set 'resources.limits.memory'|[KSV018](https://avd.aquasec.com/misconfig/ksv018)|\n\nEnforcing memory limits prevents DoS via resource exhaustion."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "2.0",
+                "tags": [
+                  "misconfiguration",
+                  "security",
+                  "LOW"
+                ]
+              }
+            },
+            {
+              "id": "KSV020",
+              "name": "Misconfiguration",
+              "shortDescription": {
+                "text": "Runs with UID \u003c= 10000"
+              },
+              "fullDescription": {
+                "text": "Force the container to run with user ID \u003e 10000 to avoid conflicts with the host’s user table."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "helpUri": "https://avd.aquasec.com/misconfig/ksv020",
+              "help": {
+                "text": "Misconfiguration KSV020\nType: Kubernetes Security Check\nSeverity: LOW\nCheck: Runs with UID \u003c= 10000\nMessage: Container 'insecure-container' of Deployment 'insecure-deployment' should set 'securityContext.runAsUser' \u003e 10000\nLink: [KSV020](https://avd.aquasec.com/misconfig/ksv020)\nForce the container to run with user ID \u003e 10000 to avoid conflicts with the host’s user table.",
+                "markdown": "**Misconfiguration KSV020**\n| Type | Severity | Check | Message | Link |\n| --- | --- | --- | --- | --- |\n|Kubernetes Security Check|LOW|Runs with UID \u003c= 10000|Container 'insecure-container' of Deployment 'insecure-deployment' should set 'securityContext.runAsUser' \u003e 10000|[KSV020](https://avd.aquasec.com/misconfig/ksv020)|\n\nForce the container to run with user ID \u003e 10000 to avoid conflicts with the host’s user table."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "2.0",
+                "tags": [
+                  "misconfiguration",
+                  "security",
+                  "LOW"
+                ]
+              }
+            },
+            {
+              "id": "KSV021",
+              "name": "Misconfiguration",
+              "shortDescription": {
+                "text": "Runs with GID \u003c= 10000"
+              },
+              "fullDescription": {
+                "text": "Force the container to run with group ID \u003e 10000 to avoid conflicts with the host’s user table."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "helpUri": "https://avd.aquasec.com/misconfig/ksv021",
+              "help": {
+                "text": "Misconfiguration KSV021\nType: Kubernetes Security Check\nSeverity: LOW\nCheck: Runs with GID \u003c= 10000\nMessage: Container 'insecure-container' of Deployment 'insecure-deployment' should set 'securityContext.runAsGroup' \u003e 10000\nLink: [KSV021](https://avd.aquasec.com/misconfig/ksv021)\nForce the container to run with group ID \u003e 10000 to avoid conflicts with the host’s user table.",
+                "markdown": "**Misconfiguration KSV021**\n| Type | Severity | Check | Message | Link |\n| --- | --- | --- | --- | --- |\n|Kubernetes Security Check|LOW|Runs with GID \u003c= 10000|Container 'insecure-container' of Deployment 'insecure-deployment' should set 'securityContext.runAsGroup' \u003e 10000|[KSV021](https://avd.aquasec.com/misconfig/ksv021)|\n\nForce the container to run with group ID \u003e 10000 to avoid conflicts with the host’s user table."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "2.0",
+                "tags": [
+                  "misconfiguration",
+                  "security",
+                  "LOW"
+                ]
+              }
+            },
+            {
+              "id": "KSV023",
+              "name": "Misconfiguration",
+              "shortDescription": {
+                "text": "hostPath volumes mounted"
+              },
+              "fullDescription": {
+                "text": "According to pod security standard 'HostPath Volumes', HostPath volumes must be forbidden."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/misconfig/ksv023",
+              "help": {
+                "text": "Misconfiguration KSV023\nType: Kubernetes Security Check\nSeverity: MEDIUM\nCheck: hostPath volumes mounted\nMessage: Deployment 'insecure-deployment' should not set 'spec.template.volumes.hostPath'\nLink: [KSV023](https://avd.aquasec.com/misconfig/ksv023)\nAccording to pod security standard 'HostPath Volumes', HostPath volumes must be forbidden.",
+                "markdown": "**Misconfiguration KSV023**\n| Type | Severity | Check | Message | Link |\n| --- | --- | --- | --- | --- |\n|Kubernetes Security Check|MEDIUM|hostPath volumes mounted|Deployment 'insecure-deployment' should not set 'spec.template.volumes.hostPath'|[KSV023](https://avd.aquasec.com/misconfig/ksv023)|\n\nAccording to pod security standard 'HostPath Volumes', HostPath volumes must be forbidden."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "misconfiguration",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "KSV030",
+              "name": "Misconfiguration",
+              "shortDescription": {
+                "text": "Runtime/Default Seccomp profile not set"
+              },
+              "fullDescription": {
+                "text": "According to pod security standard 'Seccomp', the RuntimeDefault seccomp profile must be required, or allow specific additional profiles."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "helpUri": "https://avd.aquasec.com/misconfig/ksv030",
+              "help": {
+                "text": "Misconfiguration KSV030\nType: Kubernetes Security Check\nSeverity: LOW\nCheck: Runtime/Default Seccomp profile not set\nMessage: Either Pod or Container should set 'securityContext.seccompProfile.type' to 'RuntimeDefault'\nLink: [KSV030](https://avd.aquasec.com/misconfig/ksv030)\nAccording to pod security standard 'Seccomp', the RuntimeDefault seccomp profile must be required, or allow specific additional profiles.",
+                "markdown": "**Misconfiguration KSV030**\n| Type | Severity | Check | Message | Link |\n| --- | --- | --- | --- | --- |\n|Kubernetes Security Check|LOW|Runtime/Default Seccomp profile not set|Either Pod or Container should set 'securityContext.seccompProfile.type' to 'RuntimeDefault'|[KSV030](https://avd.aquasec.com/misconfig/ksv030)|\n\nAccording to pod security standard 'Seccomp', the RuntimeDefault seccomp profile must be required, or allow specific additional profiles."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "2.0",
+                "tags": [
+                  "misconfiguration",
+                  "security",
+                  "LOW"
+                ]
+              }
+            },
+            {
+              "id": "KSV104",
+              "name": "Misconfiguration",
+              "shortDescription": {
+                "text": "Seccomp policies disabled"
+              },
+              "fullDescription": {
+                "text": "A program inside the container can bypass Seccomp protection policies."
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "helpUri": "https://avd.aquasec.com/misconfig/ksv104",
+              "help": {
+                "text": "Misconfiguration KSV104\nType: Kubernetes Security Check\nSeverity: MEDIUM\nCheck: Seccomp policies disabled\nMessage: container \"insecure-container\" of deployment \"insecure-deployment\" in \"default\" namespace should specify a seccomp profile\nLink: [KSV104](https://avd.aquasec.com/misconfig/ksv104)\nA program inside the container can bypass Seccomp protection policies.",
+                "markdown": "**Misconfiguration KSV104**\n| Type | Severity | Check | Message | Link |\n| --- | --- | --- | --- | --- |\n|Kubernetes Security Check|MEDIUM|Seccomp policies disabled|container \"insecure-container\" of deployment \"insecure-deployment\" in \"default\" namespace should specify a seccomp profile|[KSV104](https://avd.aquasec.com/misconfig/ksv104)|\n\nA program inside the container can bypass Seccomp protection policies."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "5.5",
+                "tags": [
+                  "misconfiguration",
+                  "security",
+                  "MEDIUM"
+                ]
+              }
+            },
+            {
+              "id": "KSV106",
+              "name": "Misconfiguration",
+              "shortDescription": {
+                "text": "Container capabilities must only include NET_BIND_SERVICE"
+              },
+              "fullDescription": {
+                "text": "Containers must drop ALL capabilities, and are only permitted to add back the NET_BIND_SERVICE capability."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "helpUri": "https://avd.aquasec.com/misconfig/ksv106",
+              "help": {
+                "text": "Misconfiguration KSV106\nType: Kubernetes Security Check\nSeverity: LOW\nCheck: Container capabilities must only include NET_BIND_SERVICE\nMessage: container should drop all\nLink: [KSV106](https://avd.aquasec.com/misconfig/ksv106)\nContainers must drop ALL capabilities, and are only permitted to add back the NET_BIND_SERVICE capability.",
+                "markdown": "**Misconfiguration KSV106**\n| Type | Severity | Check | Message | Link |\n| --- | --- | --- | --- | --- |\n|Kubernetes Security Check|LOW|Container capabilities must only include NET_BIND_SERVICE|container should drop all|[KSV106](https://avd.aquasec.com/misconfig/ksv106)|\n\nContainers must drop ALL capabilities, and are only permitted to add back the NET_BIND_SERVICE capability."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "2.0",
+                "tags": [
+                  "misconfiguration",
+                  "security",
+                  "LOW"
+                ]
+              }
+            },
+            {
+              "id": "KSV110",
+              "name": "Misconfiguration",
+              "shortDescription": {
+                "text": "Workloads in the default namespace"
+              },
+              "fullDescription": {
+                "text": "Checks whether a workload is running in the default namespace."
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "helpUri": "https://avd.aquasec.com/misconfig/ksv110",
+              "help": {
+                "text": "Misconfiguration KSV110\nType: Kubernetes Security Check\nSeverity: LOW\nCheck: Workloads in the default namespace\nMessage: deployment insecure-deployment in default namespace should set metadata.namespace to a non-default namespace\nLink: [KSV110](https://avd.aquasec.com/misconfig/ksv110)\nChecks whether a workload is running in the default namespace.",
+                "markdown": "**Misconfiguration KSV110**\n| Type | Severity | Check | Message | Link |\n| --- | --- | --- | --- | --- |\n|Kubernetes Security Check|LOW|Workloads in the default namespace|deployment insecure-deployment in default namespace should set metadata.namespace to a non-default namespace|[KSV110](https://avd.aquasec.com/misconfig/ksv110)|\n\nChecks whether a workload is running in the default namespace."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "2.0",
+                "tags": [
+                  "misconfiguration",
+                  "security",
+                  "LOW"
+                ]
+              }
+            },
+            {
+              "id": "KSV118",
+              "name": "Misconfiguration",
+              "shortDescription": {
+                "text": "Default security context configured"
+              },
+              "fullDescription": {
+                "text": "Security context controls the allocation of security parameters for the pod/container/volume, ensuring the appropriate level of protection. Relying on default security context may expose vulnerabilities to potential attacks that rely on privileged access."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/misconfig/ksv118",
+              "help": {
+                "text": "Misconfiguration KSV118\nType: Kubernetes Security Check\nSeverity: HIGH\nCheck: Default security context configured\nMessage: deployment insecure-deployment in default namespace is using the default security context, which allows root privileges\nLink: [KSV118](https://avd.aquasec.com/misconfig/ksv118)\nSecurity context controls the allocation of security parameters for the pod/container/volume, ensuring the appropriate level of protection. Relying on default security context may expose vulnerabilities to potential attacks that rely on privileged access.",
+                "markdown": "**Misconfiguration KSV118**\n| Type | Severity | Check | Message | Link |\n| --- | --- | --- | --- | --- |\n|Kubernetes Security Check|HIGH|Default security context configured|deployment insecure-deployment in default namespace is using the default security context, which allows root privileges|[KSV118](https://avd.aquasec.com/misconfig/ksv118)|\n\nSecurity context controls the allocation of security parameters for the pod/container/volume, ensuring the appropriate level of protection. Relying on default security context may expose vulnerabilities to potential attacks that rely on privileged access."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "8.0",
+                "tags": [
+                  "misconfiguration",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "KSV121",
+              "name": "Misconfiguration",
+              "shortDescription": {
+                "text": "Kubernetes resource with disallowed volumes mounted"
+              },
+              "fullDescription": {
+                "text": "HostPath present many security risks and as a security practice it is better to avoid critical host paths mounts."
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://avd.aquasec.com/misconfig/ksv121",
+              "help": {
+                "text": "Misconfiguration KSV121\nType: Kubernetes Security Check\nSeverity: HIGH\nCheck: Kubernetes resource with disallowed volumes mounted\nMessage: deployment insecure-deployment in default namespace shouldn't have volumes set to {\"/\"}\nLink: [KSV121](https://avd.aquasec.com/misconfig/ksv121)\nHostPath present many security risks and as a security practice it is better to avoid critical host paths mounts.",
+                "markdown": "**Misconfiguration KSV121**\n| Type | Severity | Check | Message | Link |\n| --- | --- | --- | --- | --- |\n|Kubernetes Security Check|HIGH|Kubernetes resource with disallowed volumes mounted|deployment insecure-deployment in default namespace shouldn't have volumes set to {\"/\"}|[KSV121](https://avd.aquasec.com/misconfig/ksv121)|\n\nHostPath present many security risks and as a security practice it is better to avoid critical host paths mounts."
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "8.0",
+                "tags": [
+                  "misconfiguration",
+                  "security",
+                  "HIGH"
+                ]
+              }
+            },
+            {
+              "id": "stripe-secret-token",
+              "name": "Secret",
+              "shortDescription": {
+                "text": "Stripe Secret Key"
+              },
+              "fullDescription": {
+                "text": "API_TOKEN=****************************"
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "helpUri": "https://github.com/aquasecurity/trivy/blob/main/pkg/fanal/secret/builtin-rules.go",
+              "help": {
+                "text": "Secret Stripe Secret Key\nSeverity: CRITICAL\nMatch: API_TOKEN=****************************",
+                "markdown": "**Secret Stripe Secret Key**\n| Severity | Match |\n| --- | --- |\n|CRITICAL|API_TOKEN=****************************|"
+              },
+              "properties": {
+                "precision": "very-high",
+                "security-severity": "9.5",
+                "tags": [
+                  "secret",
+                  "security",
+                  "CRITICAL"
+                ]
+              }
+            }
+          ],
+          "version": "0.66.0"
+        }
+      },
+      "results": [
+        {
+          "ruleId": "GHSA-cgjv-rghq-qhgp",
+          "ruleIndex": 0,
+          "level": "error",
+          "message": {
+            "text": "Package: algo-httpserv\nInstalled Version: 1.1.1\nVulnerability GHSA-cgjv-rghq-qhgp\nSeverity: HIGH\nFixed Version: 1.1.2\nLink: [GHSA-cgjv-rghq-qhgp](https://github.com/advisories/GHSA-cgjv-rghq-qhgp)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "package-lock.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 1,
+                  "endLine": 11,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "package-lock.json: algo-httpserv@1.1.1"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2021-43138",
+          "ruleIndex": 1,
+          "level": "error",
+          "message": {
+            "text": "Package: async\nInstalled Version: 2.6.3\nVulnerability CVE-2021-43138\nSeverity: HIGH\nFixed Version: 3.2.2, 2.6.4\nLink: [CVE-2021-43138](https://avd.aquasec.com/nvd/cve-2021-43138)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "package-lock.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 51,
+                  "startColumn": 1,
+                  "endLine": 58,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "package-lock.json: async@2.6.3"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-24434",
+          "ruleIndex": 2,
+          "level": "error",
+          "message": {
+            "text": "Package: dicer\nInstalled Version: 0.2.5\nVulnerability CVE-2022-24434\nSeverity: HIGH\nFixed Version: \nLink: [CVE-2022-24434](https://avd.aquasec.com/nvd/cve-2022-24434)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "package-lock.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 238,
+                  "startColumn": 1,
+                  "endLine": 246,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "package-lock.json: dicer@0.2.5"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "GHSA-8j8c-7jfh-h6hx",
+          "ruleIndex": 3,
+          "level": "error",
+          "message": {
+            "text": "Package: js-yaml\nInstalled Version: 3.13.0\nVulnerability GHSA-8j8c-7jfh-h6hx\nSeverity: HIGH\nFixed Version: 3.13.1\nLink: [GHSA-8j8c-7jfh-h6hx](https://github.com/advisories/GHSA-8j8c-7jfh-h6hx)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "package-lock.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 534,
+                  "startColumn": 1,
+                  "endLine": 542,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "package-lock.json: js-yaml@3.13.0"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2020-8203",
+          "ruleIndex": 4,
+          "level": "error",
+          "message": {
+            "text": "Package: lodash\nInstalled Version: 4.17.15\nVulnerability CVE-2020-8203\nSeverity: HIGH\nFixed Version: 4.17.19\nLink: [CVE-2020-8203](https://avd.aquasec.com/nvd/cve-2020-8203)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "package-lock.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 605,
+                  "startColumn": 1,
+                  "endLine": 609,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "package-lock.json: lodash@4.17.15"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2021-23337",
+          "ruleIndex": 5,
+          "level": "error",
+          "message": {
+            "text": "Package: lodash\nInstalled Version: 4.17.15\nVulnerability CVE-2021-23337\nSeverity: HIGH\nFixed Version: 4.17.21\nLink: [CVE-2021-23337](https://avd.aquasec.com/nvd/cve-2021-23337)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "package-lock.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 605,
+                  "startColumn": 1,
+                  "endLine": 609,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "package-lock.json: lodash@4.17.15"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "NSWG-ECO-516",
+          "ruleIndex": 6,
+          "level": "error",
+          "message": {
+            "text": "Package: lodash\nInstalled Version: 4.17.15\nVulnerability NSWG-ECO-516\nSeverity: HIGH\nFixed Version: \u003e=4.17.19\nLink: [NSWG-ECO-516](https://www.npmjs.com/advisories/1523)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "package-lock.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 605,
+                  "startColumn": 1,
+                  "endLine": 609,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "package-lock.json: lodash@4.17.15"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2020-28500",
+          "ruleIndex": 7,
+          "level": "warning",
+          "message": {
+            "text": "Package: lodash\nInstalled Version: 4.17.15\nVulnerability CVE-2020-28500\nSeverity: MEDIUM\nFixed Version: 4.17.21\nLink: [CVE-2020-28500](https://avd.aquasec.com/nvd/cve-2020-28500)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "package-lock.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 605,
+                  "startColumn": 1,
+                  "endLine": 609,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "package-lock.json: lodash@4.17.15"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-21680",
+          "ruleIndex": 8,
+          "level": "error",
+          "message": {
+            "text": "Package: marked\nInstalled Version: 0.3.19\nVulnerability CVE-2022-21680\nSeverity: HIGH\nFixed Version: 4.0.10\nLink: [CVE-2022-21680](https://avd.aquasec.com/nvd/cve-2022-21680)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "package-lock.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 619,
+                  "startColumn": 1,
+                  "endLine": 623,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "package-lock.json: marked@0.3.19"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-21681",
+          "ruleIndex": 9,
+          "level": "error",
+          "message": {
+            "text": "Package: marked\nInstalled Version: 0.3.19\nVulnerability CVE-2022-21681\nSeverity: HIGH\nFixed Version: 4.0.10\nLink: [CVE-2022-21681](https://avd.aquasec.com/nvd/cve-2022-21681)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "package-lock.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 619,
+                  "startColumn": 1,
+                  "endLine": 623,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "package-lock.json: marked@0.3.19"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "GHSA-xf5p-87ch-gxw2",
+          "ruleIndex": 10,
+          "level": "warning",
+          "message": {
+            "text": "Package: marked\nInstalled Version: 0.3.19\nVulnerability GHSA-xf5p-87ch-gxw2\nSeverity: MEDIUM\nFixed Version: 0.6.2\nLink: [GHSA-xf5p-87ch-gxw2](https://github.com/advisories/GHSA-xf5p-87ch-gxw2)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "package-lock.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 619,
+                  "startColumn": 1,
+                  "endLine": 623,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "package-lock.json: marked@0.3.19"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2021-44906",
+          "ruleIndex": 11,
+          "level": "error",
+          "message": {
+            "text": "Package: minimist\nInstalled Version: 0.0.10\nVulnerability CVE-2021-44906\nSeverity: CRITICAL\nFixed Version: 1.2.6, 0.2.4\nLink: [CVE-2021-44906](https://avd.aquasec.com/nvd/cve-2021-44906)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "package-lock.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 633,
+                  "startColumn": 1,
+                  "endLine": 637,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "package-lock.json: minimist@0.0.10"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2020-7598",
+          "ruleIndex": 12,
+          "level": "warning",
+          "message": {
+            "text": "Package: minimist\nInstalled Version: 0.0.10\nVulnerability CVE-2020-7598\nSeverity: MEDIUM\nFixed Version: 0.2.1, 1.2.3\nLink: [CVE-2020-7598](https://avd.aquasec.com/nvd/cve-2020-7598)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "package-lock.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 633,
+                  "startColumn": 1,
+                  "endLine": 637,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "package-lock.json: minimist@0.0.10"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-24999",
+          "ruleIndex": 13,
+          "level": "error",
+          "message": {
+            "text": "Package: qs\nInstalled Version: 6.9.1\nVulnerability CVE-2022-24999\nSeverity: HIGH\nFixed Version: 6.10.3, 6.9.7, 6.8.3, 6.7.3, 6.6.1, 6.5.3, 6.4.1, 6.3.3, 6.2.4\nLink: [CVE-2022-24999](https://avd.aquasec.com/nvd/cve-2022-24999)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "package-lock.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 838,
+                  "startColumn": 1,
+                  "endLine": 842,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "package-lock.json: qs@6.9.1"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2022-25883",
+          "ruleIndex": 14,
+          "level": "error",
+          "message": {
+            "text": "Package: semver\nInstalled Version: 5.7.1\nVulnerability CVE-2022-25883\nSeverity: HIGH\nFixed Version: 7.5.2, 6.3.1, 5.7.2\nLink: [CVE-2022-25883](https://avd.aquasec.com/nvd/cve-2022-25883)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "package-lock.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 880,
+                  "startColumn": 1,
+                  "endLine": 884,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "package-lock.json: semver@5.7.1"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "CVE-2021-23358",
+          "ruleIndex": 15,
+          "level": "error",
+          "message": {
+            "text": "Package: underscore\nInstalled Version: 1.9.2\nVulnerability CVE-2021-23358\nSeverity: CRITICAL\nFixed Version: 1.12.1\nLink: [CVE-2021-23358](https://avd.aquasec.com/nvd/cve-2021-23358)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "package-lock.json",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 981,
+                  "startColumn": 1,
+                  "endLine": 985,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "package-lock.json: underscore@1.9.2"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DS002",
+          "ruleIndex": 16,
+          "level": "error",
+          "message": {
+            "text": "Artifact: apps/demo/Dockerfile\nType: dockerfile\nVulnerability DS002\nSeverity: HIGH\nMessage: Specify at least 1 USER command in Dockerfile with non-root user as argument\nLink: [DS002](https://avd.aquasec.com/misconfig/ds002)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "apps/demo/Dockerfile",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "apps/demo/Dockerfile"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "DS026",
+          "ruleIndex": 17,
+          "level": "note",
+          "message": {
+            "text": "Artifact: apps/demo/Dockerfile\nType: dockerfile\nVulnerability DS026\nSeverity: LOW\nMessage: Add HEALTHCHECK instruction in your Dockerfile\nLink: [DS026](https://avd.aquasec.com/misconfig/ds026)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "apps/demo/Dockerfile",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "apps/demo/Dockerfile"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "KSV001",
+          "ruleIndex": 18,
+          "level": "warning",
+          "message": {
+            "text": "Artifact: k8s/deployment-insecure.yaml\nType: kubernetes\nVulnerability KSV001\nSeverity: MEDIUM\nMessage: Container 'insecure-container' of Deployment 'insecure-deployment' should set 'securityContext.allowPrivilegeEscalation' to false\nLink: [KSV001](https://avd.aquasec.com/misconfig/ksv001)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "k8s/deployment-insecure.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 1,
+                  "endLine": 22,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "k8s/deployment-insecure.yaml"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "KSV003",
+          "ruleIndex": 19,
+          "level": "note",
+          "message": {
+            "text": "Artifact: k8s/deployment-insecure.yaml\nType: kubernetes\nVulnerability KSV003\nSeverity: LOW\nMessage: Container 'insecure-container' of Deployment 'insecure-deployment' should add 'ALL' to 'securityContext.capabilities.drop'\nLink: [KSV003](https://avd.aquasec.com/misconfig/ksv003)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "k8s/deployment-insecure.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 1,
+                  "endLine": 22,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "k8s/deployment-insecure.yaml"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "KSV004",
+          "ruleIndex": 20,
+          "level": "note",
+          "message": {
+            "text": "Artifact: k8s/deployment-insecure.yaml\nType: kubernetes\nVulnerability KSV004\nSeverity: LOW\nMessage: Container 'insecure-container' of 'deployment' 'insecure-deployment' in 'default' namespace should set securityContext.capabilities.drop\nLink: [KSV004](https://avd.aquasec.com/misconfig/ksv004)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "k8s/deployment-insecure.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 1,
+                  "endLine": 22,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "k8s/deployment-insecure.yaml"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "KSV011",
+          "ruleIndex": 21,
+          "level": "note",
+          "message": {
+            "text": "Artifact: k8s/deployment-insecure.yaml\nType: kubernetes\nVulnerability KSV011\nSeverity: LOW\nMessage: Container 'insecure-container' of Deployment 'insecure-deployment' should set 'resources.limits.cpu'\nLink: [KSV011](https://avd.aquasec.com/misconfig/ksv011)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "k8s/deployment-insecure.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 1,
+                  "endLine": 22,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "k8s/deployment-insecure.yaml"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "KSV012",
+          "ruleIndex": 22,
+          "level": "warning",
+          "message": {
+            "text": "Artifact: k8s/deployment-insecure.yaml\nType: kubernetes\nVulnerability KSV012\nSeverity: MEDIUM\nMessage: Container 'insecure-container' of Deployment 'insecure-deployment' should set 'securityContext.runAsNonRoot' to true\nLink: [KSV012](https://avd.aquasec.com/misconfig/ksv012)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "k8s/deployment-insecure.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 1,
+                  "endLine": 22,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "k8s/deployment-insecure.yaml"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "KSV014",
+          "ruleIndex": 23,
+          "level": "error",
+          "message": {
+            "text": "Artifact: k8s/deployment-insecure.yaml\nType: kubernetes\nVulnerability KSV014\nSeverity: HIGH\nMessage: Container 'insecure-container' of Deployment 'insecure-deployment' should set 'securityContext.readOnlyRootFilesystem' to true\nLink: [KSV014](https://avd.aquasec.com/misconfig/ksv014)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "k8s/deployment-insecure.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 1,
+                  "endLine": 22,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "k8s/deployment-insecure.yaml"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "KSV015",
+          "ruleIndex": 24,
+          "level": "note",
+          "message": {
+            "text": "Artifact: k8s/deployment-insecure.yaml\nType: kubernetes\nVulnerability KSV015\nSeverity: LOW\nMessage: Container 'insecure-container' of Deployment 'insecure-deployment' should set 'resources.requests.cpu'\nLink: [KSV015](https://avd.aquasec.com/misconfig/ksv015)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "k8s/deployment-insecure.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 1,
+                  "endLine": 22,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "k8s/deployment-insecure.yaml"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "KSV016",
+          "ruleIndex": 25,
+          "level": "note",
+          "message": {
+            "text": "Artifact: k8s/deployment-insecure.yaml\nType: kubernetes\nVulnerability KSV016\nSeverity: LOW\nMessage: Container 'insecure-container' of Deployment 'insecure-deployment' should set 'resources.requests.memory'\nLink: [KSV016](https://avd.aquasec.com/misconfig/ksv016)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "k8s/deployment-insecure.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 1,
+                  "endLine": 22,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "k8s/deployment-insecure.yaml"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "KSV017",
+          "ruleIndex": 26,
+          "level": "error",
+          "message": {
+            "text": "Artifact: k8s/deployment-insecure.yaml\nType: kubernetes\nVulnerability KSV017\nSeverity: HIGH\nMessage: Container 'insecure-container' of Deployment 'insecure-deployment' should set 'securityContext.privileged' to false\nLink: [KSV017](https://avd.aquasec.com/misconfig/ksv017)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "k8s/deployment-insecure.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 1,
+                  "endLine": 22,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "k8s/deployment-insecure.yaml"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "KSV018",
+          "ruleIndex": 27,
+          "level": "note",
+          "message": {
+            "text": "Artifact: k8s/deployment-insecure.yaml\nType: kubernetes\nVulnerability KSV018\nSeverity: LOW\nMessage: Container 'insecure-container' of Deployment 'insecure-deployment' should set 'resources.limits.memory'\nLink: [KSV018](https://avd.aquasec.com/misconfig/ksv018)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "k8s/deployment-insecure.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 1,
+                  "endLine": 22,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "k8s/deployment-insecure.yaml"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "KSV020",
+          "ruleIndex": 28,
+          "level": "note",
+          "message": {
+            "text": "Artifact: k8s/deployment-insecure.yaml\nType: kubernetes\nVulnerability KSV020\nSeverity: LOW\nMessage: Container 'insecure-container' of Deployment 'insecure-deployment' should set 'securityContext.runAsUser' \u003e 10000\nLink: [KSV020](https://avd.aquasec.com/misconfig/ksv020)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "k8s/deployment-insecure.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 1,
+                  "endLine": 22,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "k8s/deployment-insecure.yaml"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "KSV021",
+          "ruleIndex": 29,
+          "level": "note",
+          "message": {
+            "text": "Artifact: k8s/deployment-insecure.yaml\nType: kubernetes\nVulnerability KSV021\nSeverity: LOW\nMessage: Container 'insecure-container' of Deployment 'insecure-deployment' should set 'securityContext.runAsGroup' \u003e 10000\nLink: [KSV021](https://avd.aquasec.com/misconfig/ksv021)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "k8s/deployment-insecure.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 1,
+                  "endLine": 22,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "k8s/deployment-insecure.yaml"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "KSV023",
+          "ruleIndex": 30,
+          "level": "warning",
+          "message": {
+            "text": "Artifact: k8s/deployment-insecure.yaml\nType: kubernetes\nVulnerability KSV023\nSeverity: MEDIUM\nMessage: Deployment 'insecure-deployment' should not set 'spec.template.volumes.hostPath'\nLink: [KSV023](https://avd.aquasec.com/misconfig/ksv023)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "k8s/deployment-insecure.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 1,
+                  "endLine": 27,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "k8s/deployment-insecure.yaml"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "KSV030",
+          "ruleIndex": 31,
+          "level": "note",
+          "message": {
+            "text": "Artifact: k8s/deployment-insecure.yaml\nType: kubernetes\nVulnerability KSV030\nSeverity: LOW\nMessage: Either Pod or Container should set 'securityContext.seccompProfile.type' to 'RuntimeDefault'\nLink: [KSV030](https://avd.aquasec.com/misconfig/ksv030)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "k8s/deployment-insecure.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 1,
+                  "endLine": 22,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "k8s/deployment-insecure.yaml"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "KSV104",
+          "ruleIndex": 32,
+          "level": "warning",
+          "message": {
+            "text": "Artifact: k8s/deployment-insecure.yaml\nType: kubernetes\nVulnerability KSV104\nSeverity: MEDIUM\nMessage: container \"insecure-container\" of deployment \"insecure-deployment\" in \"default\" namespace should specify a seccomp profile\nLink: [KSV104](https://avd.aquasec.com/misconfig/ksv104)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "k8s/deployment-insecure.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 1,
+                  "endLine": 22,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "k8s/deployment-insecure.yaml"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "KSV106",
+          "ruleIndex": 33,
+          "level": "note",
+          "message": {
+            "text": "Artifact: k8s/deployment-insecure.yaml\nType: kubernetes\nVulnerability KSV106\nSeverity: LOW\nMessage: container should drop all\nLink: [KSV106](https://avd.aquasec.com/misconfig/ksv106)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "k8s/deployment-insecure.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 1,
+                  "endLine": 22,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "k8s/deployment-insecure.yaml"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "KSV110",
+          "ruleIndex": 34,
+          "level": "note",
+          "message": {
+            "text": "Artifact: k8s/deployment-insecure.yaml\nType: kubernetes\nVulnerability KSV110\nSeverity: LOW\nMessage: deployment insecure-deployment in default namespace should set metadata.namespace to a non-default namespace\nLink: [KSV110](https://avd.aquasec.com/misconfig/ksv110)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "k8s/deployment-insecure.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 4,
+                  "startColumn": 1,
+                  "endLine": 4,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "k8s/deployment-insecure.yaml"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "KSV118",
+          "ruleIndex": 35,
+          "level": "error",
+          "message": {
+            "text": "Artifact: k8s/deployment-insecure.yaml\nType: kubernetes\nVulnerability KSV118\nSeverity: HIGH\nMessage: deployment insecure-deployment in default namespace is using the default security context, which allows root privileges\nLink: [KSV118](https://avd.aquasec.com/misconfig/ksv118)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "k8s/deployment-insecure.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 1,
+                  "endLine": 27,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "k8s/deployment-insecure.yaml"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "KSV121",
+          "ruleIndex": 36,
+          "level": "error",
+          "message": {
+            "text": "Artifact: k8s/deployment-insecure.yaml\nType: kubernetes\nVulnerability KSV121\nSeverity: HIGH\nMessage: deployment insecure-deployment in default namespace shouldn't have volumes set to {\"/\"}\nLink: [KSV121](https://avd.aquasec.com/misconfig/ksv121)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "k8s/deployment-insecure.yaml",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 1,
+                  "endLine": 27,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": "k8s/deployment-insecure.yaml"
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "stripe-secret-token",
+          "ruleIndex": 37,
+          "level": "error",
+          "message": {
+            "text": "Artifact: .secrets/credentials.env\nType: \nSecret Stripe Secret Key\nSeverity: CRITICAL\nMatch: API_TOKEN=****************************"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": ".secrets/credentials.env",
+                  "uriBaseId": "ROOTPATH"
+                },
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 1,
+                  "endLine": 5,
+                  "endColumn": 1
+                }
+              },
+              "message": {
+                "text": ".secrets/credentials.env"
+              }
+            }
+          ]
+        }
+      ],
+      "columnKind": "utf16CodeUnits",
+      "originalUriBaseIds": {
+        "ROOTPATH": {
+          "uri": "file:///project/"
+        }
+      }
+    }
+  ]
+}
