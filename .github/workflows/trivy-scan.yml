@@ -67,15 +67,21 @@ jobs:
         path: ${{ fromJson(needs.discover.outputs.paths_json) }}
     steps:
       - uses: actions/checkout@v4
+      - id: sanitize
+        name: Sanitize path for filenames
+        run: |
+          SANITIZED_PATH="${{ matrix.path }}"
+          SANITIZED_PATH="${SANITIZED_PATH//\//-}"
+          echo "sanitized_path=$SANITIZED_PATH" >> $GITHUB_OUTPUT
 
       - name: Trivy (fs + secrets + misconfig) → SARIF
-        uses: aquasecurity/trivy-action@v0.33.1   # replace with a pinned tag when you pick one
+        uses: aquasecurity/trivy-action@v0   # replace with a pinned tag when you pick one
         with:
           scan-type: fs
           scan-ref: ${{ matrix.path }}
           scanners: vuln,secret,misconfig
           format: sarif
-          output: trivy-${{ matrix.path//\//- }}.sarif
+          output: trivy-${{ steps.sanitize.outputs.sanitized_path }}.sarif
           ignore-unfixed: true
           severity: CRITICAL,HIGH
           # Skip noisy dirs (adjust as needed)
@@ -85,7 +91,7 @@ jobs:
         if: always()
         uses: github/codeql-action/upload-sarif@v3
         with:
-          sarif_file: trivy-${{ matrix.path//\//- }}.sarif
+          sarif_file: trivy-${{ steps.sanitize.outputs.sanitized_path }}.sarif
           category: trivy-fs-${{ matrix.path }}
 
   image_scan:
@@ -99,19 +105,27 @@ jobs:
         dir: ${{ fromJson(needs.discover.outputs.docker_json) }}
     steps:
       - uses: actions/checkout@v4
-
-      - name: Build image
+      - id: build-image
+        name: Build image
         run: |
-          IMAGE=monorepo/${{ matrix.dir##*/ }}:${{ github.sha }}
+          IMAGE_NAME=$(basename "${{ matrix.dir }}")
+          IMAGE=monorepo/${IMAGE_NAME}:${{ github.sha }}
           docker build -t "$IMAGE" "${{ matrix.dir }}"
-          echo "IMAGE=$IMAGE" >> $GITHUB_ENV
+          echo "image=$IMAGE" >> $GITHUB_OUTPUT
+
+      - id: sanitize-dir
+        name: Sanitize dir for filenames
+        run: |
+          SANITIZED_DIR="${{ matrix.dir }}"
+          SANITIZED_DIR="${SANITIZED_DIR//\//-}"
+          echo "sanitized_dir=$SANITIZED_DIR" >> $GITHUB_OUTPUT
 
       - name: Trivy (image) → SARIF
-        uses: aquasecurity/trivy-action@v0.33.1   # replace with a pinned tag when you pick one
+        uses: aquasecurity/trivy-action@v0   # replace with a pinned tag when you pick one
         with:
-          image-ref: ${{ env.IMAGE }}
+          image-ref: ${{ steps.build-image.outputs.image }}
           format: sarif
-          output: trivy-image-${{ matrix.dir//\//- }}.sarif
+          output: trivy-image-${{ steps.sanitize-dir.outputs.sanitized_dir }}.sarif
           vuln-type: os,library
           ignore-unfixed: true
           severity: CRITICAL,HIGH
@@ -120,5 +134,5 @@ jobs:
         if: always()
         uses: github/codeql-action/upload-sarif@v3
         with:
-          sarif_file: trivy-image-${{ matrix.dir//\//- }}.sarif
+          sarif_file: trivy-image-${{ steps.sanitize-dir.outputs.sanitized_dir }}.sarif
           category: trivy-image-${{ matrix.dir }}
