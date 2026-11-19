@@ -1,0 +1,53 @@
+# digicert-scan-template-version: 1
+name: DigiCert Code Scan stage
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit-sha:
+        description: 'Commit SHA to scan'
+        required: true
+      tag:
+        description: 'Release tag'
+        required: false
+        default: ''
+      release-name:
+        description: 'Release name'
+        required: false
+        default: ''
+      internal-release-id:
+        description: 'DCOne internal release id'
+        required: false
+        default: ''
+      branch:
+        description: 'Release source branch'
+        required: false
+        default: ''
+      registration-only:
+        description: 'If true, run a no-op dispatch to register this workflow with GitHub without performing an actual scan'
+        required: false
+        default: 'false'
+
+jobs:
+  analyze:
+    name: DigiCert Code Monitoring
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+      security-events: read
+    steps:
+      - if: inputs['registration-only'] != 'true'
+        uses: digicert/digicert-code-monitoring-action@13fd9be957f90f0f45812eaeb098c4c76edb23d5
+        with:
+          host: "https://one.stage.az.digicert.net"
+          api-key: ${{ secrets.STAGEAZ_API_KEY }}
+          name: ${{ inputs['release-name'] }}
+          tag: ${{ inputs.tag }}
+          with-release: "true"
+          dc-release-id: ${{ inputs['internal-release-id'] }}
+          commit-sha: ${{ inputs['commit-sha'] }}
+          branch: ${{ inputs.branch }}
+          digicert-cdn: "https://pki-downloads.digicert.com/stm/snapshot/stmclients"
+          use-github-caching-service: "true"
+          use-binary-sha256-checksum: "true"
